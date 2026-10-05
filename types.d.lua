@@ -1,0 +1,2828 @@
+--!strict
+--[[
+    ─────────────────────────────────────────────────────────────
+    Classe com hints LuaLS gerada automaticamente a partir de:
+    https://github.com/mdn/data/blob/main/css/properties.json
+
+    Representa as propriedades de estilo aplicáveis a elementos SVG.
+    Cada campo corresponde a uma propriedade CSS (nome kebab-case
+    convertido para snake_case).
+
+    NÃO EDITE MANUALMENTE — regenere com generate_svgelement.lua
+    ─────────────────────────────────────────────────────────────
+]]
+---@meta
+
+---@class Element
+---@field tag string?             Tag do elemento SVG (ex.: 'rect')
+---@field id string?              Atributo id
+---@field class string?           Atributo class
+--- accent-color
+--- Sintaxe: `auto | <color>`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/accent-color
+--- Grupos: CSS Basic User Interface
+---@field accent_color string|nil
+--- align-content
+--- Sintaxe: `normal | <baseline-position> | <content-distribution> | <overflow-position>? <content-position>`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/align-content
+--- Grupos: CSS Box Alignment, CSS Flexible Box Layout
+---@field align_content string|nil
+--- align-items
+--- Sintaxe: `normal | stretch | <baseline-position> | [ <overflow-position>? <self-position> ] | anchor-center`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/align-items
+--- Grupos: CSS Box Alignment, CSS Flexible Box Layout
+---@field align_items string|nil
+--- align-self
+--- Sintaxe: `auto | normal | stretch | <baseline-position> | <overflow-position>? <self-position> | anchor-center`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/align-self
+--- Grupos: CSS Box Alignment, CSS Flexible Box Layout
+---@field align_self string|nil
+--- alignment-baseline
+--- Sintaxe: `baseline | alphabetic | ideographic | middle | central | mathematical | text-before-edge | text-after-edge`
+--- Valor inicial: `baseline`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/alignment-baseline
+--- Grupos: CSS Inline
+---@field alignment_baseline string|nil
+--- animation
+--- Sintaxe: `<single-animation>#`
+--- Valor inicial: `animation-name, animation-duration, animation-timing-function, animation-dela...`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation
+--- Grupos: CSS Animations
+---@field animation string|nil
+--- animation-composition
+--- Sintaxe: `<single-animation-composition>#`
+--- Valor inicial: `replace`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-composition
+--- Grupos: CSS Animations
+---@field animation_composition string|nil
+--- animation-delay
+--- Sintaxe: `<time>#`
+--- Valor inicial: `0s`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-delay
+--- Grupos: CSS Animations
+---@field animation_delay string|nil
+--- animation-direction
+--- Sintaxe: `<single-animation-direction>#`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-direction
+--- Grupos: CSS Animations
+---@field animation_direction string|nil
+--- animation-duration
+--- Sintaxe: `[ auto | <time [0s,∞]> ]#`
+--- Valor inicial: `0s`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-duration
+--- Grupos: CSS Animations
+---@field animation_duration string|nil
+--- animation-fill-mode
+--- Sintaxe: `<single-animation-fill-mode>#`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-fill-mode
+--- Grupos: CSS Animations
+---@field animation_fill_mode string|nil
+--- animation-iteration-count
+--- Sintaxe: `<single-animation-iteration-count>#`
+--- Valor inicial: `1`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-iteration-count
+--- Grupos: CSS Animations
+---@field animation_iteration_count string|nil
+--- animation-name
+--- Sintaxe: `[ none | <keyframes-name> ]#`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-name
+--- Grupos: CSS Animations
+---@field animation_name string|nil
+--- animation-play-state
+--- Sintaxe: `<single-animation-play-state>#`
+--- Valor inicial: `running`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-play-state
+--- Grupos: CSS Animations
+---@field animation_play_state string|nil
+--- animation-timeline
+--- Sintaxe: `<single-animation-timeline>#`
+--- Valor inicial: `auto`
+--- Herdado: false
+--- Status: experimental
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-timeline
+--- Grupos: CSS Animations
+---@field animation_timeline string|nil
+--- animation-timing-function
+--- Sintaxe: `<easing-function>#`
+--- Valor inicial: `ease`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-timing-function
+--- Grupos: CSS Animations
+---@field animation_timing_function string|nil
+--- animation-trigger
+--- Sintaxe: `[ none | [ <dashed-ident> <animation-action>+ ]+ ]#`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/animation-trigger
+--- Grupos: CSS Animations
+---@field animation_trigger string|nil
+--- appearance
+--- Sintaxe: `none | auto | <compat-auto> | <compat-special>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/appearance
+--- Grupos: CSS Basic User Interface
+---@field appearance string|nil
+--- backdrop-filter
+--- Sintaxe: `none | <filter-value-list>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/backdrop-filter
+--- Grupos: Filter Effects
+---@field backdrop_filter string|nil
+--- backface-visibility
+--- Sintaxe: `visible | hidden`
+--- Valor inicial: `visible`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/backface-visibility
+--- Grupos: CSS Transforms
+---@field backface_visibility string|nil
+--- background
+--- Sintaxe: `<bg-layer>#? , <final-bg-layer>`
+--- Valor inicial: `background-image, background-position, background-size, background-repeat, ba...`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background
+--- Grupos: CSS Backgrounds and Borders
+---@field background string|nil
+--- background-attachment
+--- Sintaxe: `<attachment>#`
+--- Valor inicial: `scroll`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-attachment
+--- Grupos: CSS Backgrounds and Borders
+---@field background_attachment string|nil
+--- background-clip
+--- Sintaxe: `<bg-clip>#`
+--- Valor inicial: `border-box`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-clip
+--- Grupos: CSS Backgrounds and Borders
+---@field background_clip string|nil
+--- background-color
+--- Sintaxe: `<color>`
+--- Valor inicial: `transparent`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-color
+--- Grupos: CSS Backgrounds and Borders
+---@field background_color string|nil
+--- background-image
+--- Sintaxe: `<bg-image>#`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-image
+--- Grupos: CSS Backgrounds and Borders
+---@field background_image string|nil
+--- background-origin
+--- Sintaxe: `<visual-box>#`
+--- Valor inicial: `padding-box`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-origin
+--- Grupos: CSS Backgrounds and Borders
+---@field background_origin string|nil
+--- background-position
+--- Sintaxe: `<bg-position>#`
+--- Valor inicial: `0% 0%`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-position
+--- Grupos: CSS Backgrounds and Borders
+---@field background_position string|nil
+--- background-position-x
+--- Sintaxe: `[ center | [ [ left | right | x-start | x-end ]? <length-percentage>? ]! ]#`
+--- Valor inicial: `0%`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-position-x
+--- Grupos: CSS Backgrounds and Borders
+---@field background_position_x number|string|nil
+--- background-position-y
+--- Sintaxe: `[ center | [ [ top | bottom | y-start | y-end ]? <length-percentage>? ]! ]#`
+--- Valor inicial: `0%`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-position-y
+--- Grupos: CSS Backgrounds and Borders
+---@field background_position_y number|string|nil
+--- background-repeat
+--- Sintaxe: `<repeat-style>#`
+--- Valor inicial: `repeat`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-repeat
+--- Grupos: CSS Backgrounds and Borders
+---@field background_repeat string|nil
+--- background-size
+--- Sintaxe: `<bg-size>#`
+--- Valor inicial: `auto auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/background-size
+--- Grupos: CSS Backgrounds and Borders
+---@field background_size string|nil
+--- baseline-shift
+--- Sintaxe: `<length-percentage> | sub | super | baseline`
+--- Valor inicial: `0`
+--- Herdado: false
+--- Grupos: CSS Inline
+---@field baseline_shift number|string|nil
+--- baseline-source
+--- Sintaxe: `auto | first | last`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/baseline-source
+--- Grupos: CSS Inline
+---@field baseline_source string|nil
+--- border
+--- Sintaxe: `<line-width> || <line-style> || <color>`
+--- Valor inicial: `border-width, border-style, border-color`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border
+--- Grupos: CSS Backgrounds and Borders
+---@field border string|nil
+--- border-bottom
+--- Sintaxe: `<line-width> || <line-style> || <color>`
+--- Valor inicial: `border-bottom-width, border-bottom-style, border-bottom-color`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-bottom
+--- Grupos: CSS Backgrounds and Borders
+---@field border_bottom string|nil
+--- border-bottom-color
+--- Sintaxe: `<'border-top-color'>`
+--- Valor inicial: `currentcolor`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-bottom-color
+--- Grupos: CSS Backgrounds and Borders
+---@field border_bottom_color string|nil
+--- border-bottom-left-radius
+--- Sintaxe: `<length-percentage [0,∞]>{1,2}`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-bottom-left-radius
+--- Grupos: CSS Backgrounds and Borders
+---@field border_bottom_left_radius number|string|nil
+--- border-bottom-right-radius
+--- Sintaxe: `<length-percentage [0,∞]>{1,2}`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-bottom-right-radius
+--- Grupos: CSS Backgrounds and Borders
+---@field border_bottom_right_radius number|string|nil
+--- border-bottom-style
+--- Sintaxe: `<line-style>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-bottom-style
+--- Grupos: CSS Backgrounds and Borders
+---@field border_bottom_style string|nil
+--- border-bottom-width
+--- Sintaxe: `<line-width>`
+--- Valor inicial: `medium`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-bottom-width
+--- Grupos: CSS Backgrounds and Borders
+---@field border_bottom_width string|nil
+--- border-color
+--- Sintaxe: `<color>{1,4}`
+--- Valor inicial: `border-top-color, border-right-color, border-bottom-color, border-left-color`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-color
+--- Grupos: CSS Backgrounds and Borders
+---@field border_color string|nil
+--- border-image
+--- Sintaxe: `<'border-image-source'> || <'border-image-slice'> [ / <'border-image-width'> | / <'border-image-width'>? / <'border-i...`
+--- Valor inicial: `border-image-source, border-image-slice, border-image-width, border-image-out...`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-image
+--- Grupos: CSS Backgrounds and Borders
+---@field border_image string|nil
+--- border-image-outset
+--- Sintaxe: `[ <length [0,∞]> | <number [0,∞]> ]{1,4}`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-image-outset
+--- Grupos: CSS Backgrounds and Borders
+---@field border_image_outset number|string|nil
+--- border-image-repeat
+--- Sintaxe: `[ stretch | repeat | round | space ]{1,2}`
+--- Valor inicial: `stretch`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-image-repeat
+--- Grupos: CSS Backgrounds and Borders
+---@field border_image_repeat string|nil
+--- border-image-slice
+--- Sintaxe: `[ <number [0,∞]> | <percentage [0,∞]> ]{1,4} && fill?`
+--- Valor inicial: `100%`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-image-slice
+--- Grupos: CSS Backgrounds and Borders
+---@field border_image_slice string|nil
+--- border-image-source
+--- Sintaxe: `none | <image>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-image-source
+--- Grupos: CSS Backgrounds and Borders
+---@field border_image_source string|nil
+--- border-image-width
+--- Sintaxe: `[ <length-percentage [0,∞]> | <number [0,∞]> | auto ]{1,4}`
+--- Valor inicial: `1`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-image-width
+--- Grupos: CSS Backgrounds and Borders
+---@field border_image_width number|string|nil
+--- border-left
+--- Sintaxe: `<line-width> || <line-style> || <color>`
+--- Valor inicial: `border-left-width, border-left-style, border-left-color`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-left
+--- Grupos: CSS Backgrounds and Borders
+---@field border_left string|nil
+--- border-left-color
+--- Sintaxe: `<color>`
+--- Valor inicial: `currentcolor`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-left-color
+--- Grupos: CSS Backgrounds and Borders
+---@field border_left_color string|nil
+--- border-left-style
+--- Sintaxe: `<line-style>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-left-style
+--- Grupos: CSS Backgrounds and Borders
+---@field border_left_style string|nil
+--- border-left-width
+--- Sintaxe: `<line-width>`
+--- Valor inicial: `medium`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-left-width
+--- Grupos: CSS Backgrounds and Borders
+---@field border_left_width string|nil
+--- border-radius
+--- Sintaxe: `<length-percentage [0,∞]>{1,4} [ / <length-percentage [0,∞]>{1,4} ]?`
+--- Valor inicial: `border-top-left-radius, border-top-right-radius, border-bottom-right-radius, ...`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-radius
+--- Grupos: CSS Backgrounds and Borders
+---@field border_radius number|string|nil
+--- border-right
+--- Sintaxe: `<line-width> || <line-style> || <color>`
+--- Valor inicial: `border-right-width, border-right-style, border-right-color`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-right
+--- Grupos: CSS Backgrounds and Borders
+---@field border_right string|nil
+--- border-right-color
+--- Sintaxe: `<color>`
+--- Valor inicial: `currentcolor`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-right-color
+--- Grupos: CSS Backgrounds and Borders
+---@field border_right_color string|nil
+--- border-right-style
+--- Sintaxe: `<line-style>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-right-style
+--- Grupos: CSS Backgrounds and Borders
+---@field border_right_style string|nil
+--- border-right-width
+--- Sintaxe: `<line-width>`
+--- Valor inicial: `medium`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-right-width
+--- Grupos: CSS Backgrounds and Borders
+---@field border_right_width string|nil
+--- border-shape
+--- Sintaxe: `none | [ <basic-shape> <geometry-box>?]{1,2}`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field border_shape string|nil
+--- border-style
+--- Sintaxe: `<line-style>{1,4}`
+--- Valor inicial: `border-top-style, border-right-style, border-bottom-style, border-left-style`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-style
+--- Grupos: CSS Backgrounds and Borders
+---@field border_style string|nil
+--- border-top
+--- Sintaxe: `<line-width> || <line-style> || <color>`
+--- Valor inicial: `border-top-width, border-top-style, border-top-color`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-top
+--- Grupos: CSS Backgrounds and Borders
+---@field border_top string|nil
+--- border-top-color
+--- Sintaxe: `<color>`
+--- Valor inicial: `currentcolor`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-top-color
+--- Grupos: CSS Backgrounds and Borders
+---@field border_top_color string|nil
+--- border-top-left-radius
+--- Sintaxe: `<length-percentage [0,∞]>{1,2}`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-top-left-radius
+--- Grupos: CSS Backgrounds and Borders
+---@field border_top_left_radius number|string|nil
+--- border-top-right-radius
+--- Sintaxe: `<length-percentage [0,∞]>{1,2}`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-top-right-radius
+--- Grupos: CSS Backgrounds and Borders
+---@field border_top_right_radius number|string|nil
+--- border-top-style
+--- Sintaxe: `<line-style>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-top-style
+--- Grupos: CSS Backgrounds and Borders
+---@field border_top_style string|nil
+--- border-top-width
+--- Sintaxe: `<line-width>`
+--- Valor inicial: `medium`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-top-width
+--- Grupos: CSS Backgrounds and Borders
+---@field border_top_width string|nil
+--- border-width
+--- Sintaxe: `<line-width>{1,4}`
+--- Valor inicial: `border-top-width, border-right-width, border-bottom-width, border-left-width`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/border-width
+--- Grupos: CSS Backgrounds and Borders
+---@field border_width string|nil
+--- bottom
+--- Sintaxe: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/bottom
+--- Grupos: CSS Anchor Positioning, CSS Positioned Layout
+---@field bottom number|string|nil
+--- box-decoration-break
+--- Sintaxe: `slice | clone`
+--- Valor inicial: `slice`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/box-decoration-break
+--- Grupos: CSS Fragmentation
+---@field box_decoration_break string|nil
+--- box-shadow
+--- Sintaxe: `none | <shadow>#`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/box-shadow
+--- Grupos: CSS Backgrounds and Borders
+---@field box_shadow string|nil
+--- break-after
+--- Sintaxe: `auto | avoid | always | all | avoid-page | page | left | right | recto | verso | avoid-column | column | avoid-region...`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/break-after
+--- Grupos: CSS Fragmentation
+---@field break_after string|nil
+--- break-before
+--- Sintaxe: `auto | avoid | always | all | avoid-page | page | left | right | recto | verso | avoid-column | column | avoid-region...`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/break-before
+--- Grupos: CSS Fragmentation
+---@field break_before string|nil
+--- break-inside
+--- Sintaxe: `auto | avoid | avoid-page | avoid-column | avoid-region`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/break-inside
+--- Grupos: CSS Fragmentation
+---@field break_inside string|nil
+--- caret
+--- Sintaxe: `<'caret-color'> || <'caret-animation'> || <'caret-shape'>`
+--- Valor inicial: `caret-color, caret-animation, caret-shape`
+--- Herdado: true
+--- Grupos: CSS Basic User Interface
+---@field caret string|nil
+--- caret-animation
+--- Sintaxe: `auto | manual`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/caret-animation
+--- Grupos: CSS Basic User Interface
+---@field caret_animation string|nil
+--- caret-color
+--- Sintaxe: `auto | <color>`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/caret-color
+--- Grupos: CSS Basic User Interface
+---@field caret_color string|nil
+--- caret-shape
+--- Sintaxe: `auto | bar | block | underscore`
+--- Valor inicial: `auto`
+--- Herdado: true
+--- Grupos: CSS Basic User Interface
+---@field caret_shape string|nil
+--- clear
+--- Sintaxe: `none | left | right | both | inline-start | inline-end`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/clear
+--- Grupos: CSS Positioned Layout
+---@field clear string|nil
+--- clip
+--- Sintaxe: `<shape> | auto`
+--- Valor inicial: `auto`
+--- Herdado: false
+--- Status: obsolete
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/clip
+--- Grupos: CSS Masking
+---@field clip string|nil
+--- clip-path
+--- Sintaxe: `<clip-source> | [ <basic-shape> || <geometry-box> ] | none`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/clip-path
+--- Grupos: CSS Masking
+---@field clip_path string|nil
+--- clip-rule
+--- Sintaxe: `nonzero | evenodd`
+--- Valor inicial: `nonzero`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/clip-rule
+--- Grupos: CSS Masking
+---@field clip_rule string|nil
+--- color
+--- Sintaxe: `<color>`
+--- Valor inicial: `canvastext`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/color
+--- Grupos: CSS Color
+---@field color string|nil
+--- color-interpolation-filters
+--- Sintaxe: `auto | sRGB | linearRGB`
+--- Valor inicial: `linearRGB`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/color-interpolation-filters
+--- Grupos: Filter Effects
+---@field color_interpolation_filters string|nil
+--- color-scheme
+--- Sintaxe: `normal | [ light | dark | <custom-ident> ]+ && only?`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/color-scheme
+--- Grupos: CSS Color
+---@field color_scheme string|nil
+--- column-gap
+--- Sintaxe: `normal | <length-percentage>`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/column-gap
+--- Grupos: CSS Box Alignment, CSS Multi-column Layout
+---@field column_gap number|string|nil
+--- contain
+--- Sintaxe: `none | strict | content | [ [ size || inline-size ] || layout || style || paint ]`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/contain
+--- Grupos: CSS Containment
+---@field contain string|nil
+--- container
+--- Sintaxe: `<'container-name'> [ / <'container-type'> ]?`
+--- Valor inicial: `container-name, container-type`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/container
+--- Grupos: CSS Conditional Rules
+---@field container string|nil
+--- container-name
+--- Sintaxe: `none | <custom-ident>+`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/container-name
+--- Grupos: CSS Conditional Rules
+---@field container_name string|nil
+--- container-type
+--- Sintaxe: `normal | [ [ size | inline-size ] || scroll-state ]`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/container-type
+--- Grupos: CSS Conditional Rules
+---@field container_type string|nil
+--- content-visibility
+--- Sintaxe: `visible | auto | hidden`
+--- Valor inicial: `visible`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/content-visibility
+--- Grupos: CSS Containment
+---@field content_visibility string|nil
+--- corner-block-end-shape
+--- Sintaxe: `<corner-shape-value>{1,2}`
+--- Valor inicial: `corner-end-start-shape, corner-end-end-shape`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-end-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_block_end_shape string|nil
+--- corner-block-start-shape
+--- Sintaxe: `<corner-shape-value>{1,2}`
+--- Valor inicial: `corner-start-start-shape, corner-start-end-shape`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-block-start-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_block_start_shape string|nil
+--- corner-bottom-left-shape
+--- Sintaxe: `<corner-shape-value>`
+--- Valor inicial: `round`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-left-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_bottom_left_shape string|nil
+--- corner-bottom-right-shape
+--- Sintaxe: `<corner-shape-value>`
+--- Valor inicial: `round`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-right-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_bottom_right_shape string|nil
+--- corner-bottom-shape
+--- Sintaxe: `<corner-shape-value>{1,2}`
+--- Valor inicial: `corner-bottom-left-shape, corner-bottom-right-shape`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-bottom-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_bottom_shape string|nil
+--- corner-end-end-shape
+--- Sintaxe: `<corner-shape-value>`
+--- Valor inicial: `round`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-end-end-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_end_end_shape string|nil
+--- corner-end-start-shape
+--- Sintaxe: `<corner-shape-value>`
+--- Valor inicial: `round`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-end-start-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_end_start_shape string|nil
+--- corner-inline-end-shape
+--- Sintaxe: `<corner-shape-value>{1,2}`
+--- Valor inicial: `corner-start-end-shape, corner-end-end-shape`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-inline-end-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_inline_end_shape string|nil
+--- corner-inline-start-shape
+--- Sintaxe: `<corner-shape-value>{1,2}`
+--- Valor inicial: `corner-start-start-shape, corner-start-end-shape`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-inline-start-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_inline_start_shape string|nil
+--- corner-left-shape
+--- Sintaxe: `<corner-shape-value>{1,2}`
+--- Valor inicial: `corner-top-left-shape, corner-bottom-left-shape`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-left-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_left_shape string|nil
+--- corner-right-shape
+--- Sintaxe: `<corner-shape-value>{1,2}`
+--- Valor inicial: `corner-top-right-shape, corner-bottom-right-shape`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-right-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_right_shape string|nil
+--- corner-shape
+--- Sintaxe: `<corner-shape-value>{1,4}`
+--- Valor inicial: `corner-top-left-shape, corner-top-right-shape, corner-bottom-left-shape, corn...`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_shape string|nil
+--- corner-start-end-shape
+--- Sintaxe: `<corner-shape-value>`
+--- Valor inicial: `round`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-start-end-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_start_end_shape string|nil
+--- corner-start-start-shape
+--- Sintaxe: `<corner-shape-value>`
+--- Valor inicial: `round`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-start-start-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_start_start_shape string|nil
+--- corner-top-left-shape
+--- Sintaxe: `<corner-shape-value>`
+--- Valor inicial: `round`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-left-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_top_left_shape string|nil
+--- corner-top-right-shape
+--- Sintaxe: `<corner-shape-value>`
+--- Valor inicial: `round`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-right-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_top_right_shape string|nil
+--- corner-top-shape
+--- Sintaxe: `<corner-shape-value>{1,2}`
+--- Valor inicial: `corner-top-left-shape, corner-top-right-shape`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/corner-top-shape
+--- Grupos: CSS Backgrounds and Borders
+---@field corner_top_shape string|nil
+--- counter-increment
+--- Sintaxe: `[ <counter-name> <integer>? ]+ | none`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/counter-increment
+--- Grupos: CSS Lists and Counters
+---@field counter_increment string|nil
+--- counter-reset
+--- Sintaxe: `[ <counter-name> <integer>? | <reversed-counter-name> <integer>? ]+ | none`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/counter-reset
+--- Grupos: CSS Lists and Counters
+---@field counter_reset string|nil
+--- counter-set
+--- Sintaxe: `[ <counter-name> <integer>? ]+ | none`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/counter-set
+--- Grupos: CSS Lists and Counters
+---@field counter_set string|nil
+--- cursor
+--- Sintaxe: `[ [ <url> [ <x> <y> ]? , ]* <cursor-predefined> ]`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/cursor
+--- Grupos: CSS Basic User Interface
+---@field cursor string|nil
+--- cx
+--- Sintaxe: `<length> | <percentage>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/cx
+--- Grupos: Scalable Vector Graphics
+---@field cx number|string|nil
+--- cy
+--- Sintaxe: `<length> | <percentage>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/cy
+--- Grupos: Scalable Vector Graphics
+---@field cy number|string|nil
+--- d
+--- Sintaxe: `none | path(<string>)`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/d
+--- Grupos: Scalable Vector Graphics
+---@field d string|nil
+--- direction
+--- Sintaxe: `ltr | rtl`
+--- Valor inicial: `ltr`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/direction
+--- Grupos: CSS Writing Modes
+---@field direction string|nil
+--- display
+--- Sintaxe: `[ <display-outside> || <display-inside> ] | <display-listitem> | <display-internal> | <display-box> | <display-legacy>`
+--- Valor inicial: `inline`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/display
+--- Grupos: CSS Display
+---@field display string|nil
+--- dominant-baseline
+--- Sintaxe: `auto | text-bottom | alphabetic | ideographic | middle | central | mathematical | hanging | text-top`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/dominant-baseline
+--- Grupos: CSS Inline, Scalable Vector Graphics
+---@field dominant_baseline string|nil
+--- dynamic-range-limit
+--- Sintaxe: `standard | no-limit | constrained | <dynamic-range-limit-mix()>`
+--- Valor inicial: `no-limit`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/dynamic-range-limit
+--- Grupos: CSS Color
+---@field dynamic_range_limit string|nil
+--- field-sizing
+--- Sintaxe: `content | fixed`
+--- Valor inicial: `fixed`
+--- Herdado: false
+--- Status: experimental
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/field-sizing
+--- Grupos: CSS Basic User Interface
+---@field field_sizing string|nil
+--- fill
+--- Sintaxe: `<paint>`
+--- Valor inicial: `black`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/fill
+--- Grupos: Scalable Vector Graphics
+---@field fill string|nil
+--- fill-opacity
+--- Sintaxe: `<'opacity'>`
+--- Valor inicial: `1`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/fill-opacity
+--- Grupos: Scalable Vector Graphics
+---@field fill_opacity string|nil
+--- fill-rule
+--- Sintaxe: `nonzero | evenodd`
+--- Valor inicial: `nonzero`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/fill-rule
+--- Grupos: Scalable Vector Graphics
+---@field fill_rule string|nil
+--- filter
+--- Sintaxe: `none | <filter-value-list>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/filter
+--- Grupos: Filter Effects
+---@field filter string|nil
+--- flex
+--- Sintaxe: `none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`
+--- Valor inicial: `flex-grow, flex-shrink, flex-basis`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex
+--- Grupos: CSS Flexible Box Layout
+---@field flex string|nil
+--- flex-basis
+--- Sintaxe: `content | <'width'>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex-basis
+--- Grupos: CSS Flexible Box Layout
+---@field flex_basis string|nil
+--- flex-direction
+--- Sintaxe: `row | row-reverse | column | column-reverse`
+--- Valor inicial: `row`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex-direction
+--- Grupos: CSS Flexible Box Layout
+---@field flex_direction string|nil
+--- flex-flow
+--- Sintaxe: `<'flex-direction'> || <'flex-wrap'>`
+--- Valor inicial: `flex-direction, flex-wrap`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex-flow
+--- Grupos: CSS Flexible Box Layout
+---@field flex_flow string|nil
+--- flex-grow
+--- Sintaxe: `<number>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex-grow
+--- Grupos: CSS Flexible Box Layout
+---@field flex_grow number|string|nil
+--- flex-line-count
+--- Sintaxe: `<integer [1,∞]>`
+--- Valor inicial: `1`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex-line-count
+--- Grupos: CSS Flexible Box Layout
+---@field flex_line_count string|nil
+--- flex-shrink
+--- Sintaxe: `<number>`
+--- Valor inicial: `1`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex-shrink
+--- Grupos: CSS Flexible Box Layout
+---@field flex_shrink number|string|nil
+--- flex-wrap
+--- Sintaxe: `nowrap | [ wrap | wrap-reverse ] || balance`
+--- Valor inicial: `nowrap`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flex-wrap
+--- Grupos: CSS Flexible Box Layout
+---@field flex_wrap string|nil
+--- float
+--- Sintaxe: `left | right | none | inline-start | inline-end`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/float
+--- Grupos: CSS Positioned Layout
+---@field float string|nil
+--- flood-color
+--- Sintaxe: `<color>`
+--- Valor inicial: `black`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flood-color
+--- Grupos: Filter Effects
+---@field flood_color string|nil
+--- flood-opacity
+--- Sintaxe: `<'opacity'>`
+--- Valor inicial: `black`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/flood-opacity
+--- Grupos: Filter Effects
+---@field flood_opacity string|nil
+--- font
+--- Sintaxe: `[ [ <'font-style'> || <font-variant-css2> || <'font-weight'> || <font-width-css3> ]? <'font-size'> [ / <'line-height'...`
+--- Valor inicial: `font-style, font-variant, font-weight, font-stretch, font-size, line-height, ...`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font
+--- Grupos: CSS Fonts
+---@field font string|nil
+--- font-family
+--- Sintaxe: `[ <family-name> | <generic-family> ]#`
+--- Valor inicial: `dependsOnUserAgent`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-family
+--- Grupos: CSS Fonts
+---@field font_family string|nil
+--- font-feature-settings
+--- Sintaxe: `normal | <feature-tag-value>#`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-feature-settings
+--- Grupos: CSS Fonts
+---@field font_feature_settings string|nil
+--- font-kerning
+--- Sintaxe: `auto | normal | none`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-kerning
+--- Grupos: CSS Fonts
+---@field font_kerning string|nil
+--- font-language-override
+--- Sintaxe: `normal | <string>`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-language-override
+--- Grupos: CSS Fonts
+---@field font_language_override string|nil
+--- font-optical-sizing
+--- Sintaxe: `auto | none`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-optical-sizing
+--- Grupos: CSS Fonts
+---@field font_optical_sizing string|nil
+--- font-palette
+--- Sintaxe: `normal | light | dark | <palette-identifier> | <palette-mix()>`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-palette
+--- Grupos: CSS Fonts
+---@field font_palette string|nil
+--- font-size
+--- Sintaxe: `<absolute-size> | <relative-size> | <length-percentage [0,∞]> | math`
+--- Valor inicial: `medium`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-size
+--- Grupos: CSS Fonts
+---@field font_size number|string|nil
+--- font-size-adjust
+--- Sintaxe: `none | [ ex-height | cap-height | ch-width | ic-width | ic-height ]? [ from-font | <number> ]`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-size-adjust
+--- Grupos: CSS Fonts
+---@field font_size_adjust number|string|nil
+--- font-smooth
+--- Sintaxe: `auto | never | always | <absolute-size> | <length>`
+--- Valor inicial: `auto`
+--- Herdado: true
+--- Status: nonstandard
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-smooth
+--- Grupos: CSS Fonts
+---@field font_smooth number|string|nil
+--- font-stretch
+--- Sintaxe: `<font-stretch-absolute>`
+--- Valor inicial: `normal`
+--- Herdado: true
+--- Status: obsolete
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-stretch
+--- Grupos: CSS Fonts
+---@field font_stretch string|nil
+--- font-style
+--- Sintaxe: `normal | italic | oblique <angle>?`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-style
+--- Grupos: CSS Fonts
+---@field font_style string|nil
+--- font-synthesis
+--- Sintaxe: `none | [ weight || style || small-caps || position]`
+--- Valor inicial: `weight style small-caps position `
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-synthesis
+--- Grupos: CSS Fonts
+---@field font_synthesis string|nil
+--- font-synthesis-position
+--- Sintaxe: `auto | none`
+--- Valor inicial: `none`
+--- Herdado: true
+--- Status: experimental
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-synthesis-position
+--- Grupos: CSS Fonts
+---@field font_synthesis_position string|nil
+--- font-synthesis-small-caps
+--- Sintaxe: `auto | none`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-synthesis-small-caps
+--- Grupos: CSS Fonts
+---@field font_synthesis_small_caps string|nil
+--- font-synthesis-style
+--- Sintaxe: `auto | none`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-synthesis-style
+--- Grupos: CSS Fonts
+---@field font_synthesis_style string|nil
+--- font-synthesis-weight
+--- Sintaxe: `auto | none`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-synthesis-weight
+--- Grupos: CSS Fonts
+---@field font_synthesis_weight string|nil
+--- font-variant
+--- Sintaxe: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-val...`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variant
+--- Grupos: CSS Fonts
+---@field font_variant string|nil
+--- font-variant-alternates
+--- Sintaxe: `normal | [ stylistic( <feature-value-name> ) || historical-forms || styleset( <feature-value-name># ) || character-va...`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variant-alternates
+--- Grupos: CSS Fonts
+---@field font_variant_alternates string|nil
+--- font-variant-caps
+--- Sintaxe: `normal | small-caps | all-small-caps | petite-caps | all-petite-caps | unicase | titling-caps`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variant-caps
+--- Grupos: CSS Fonts
+---@field font_variant_caps string|nil
+--- font-variant-east-asian
+--- Sintaxe: `normal | [ <east-asian-variant-values> || <east-asian-width-values> || ruby ]`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variant-east-asian
+--- Grupos: CSS Fonts
+---@field font_variant_east_asian string|nil
+--- font-variant-emoji
+--- Sintaxe: `normal | text | emoji | unicode`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variant-emoji
+--- Grupos: CSS Fonts
+---@field font_variant_emoji string|nil
+--- font-variant-ligatures
+--- Sintaxe: `normal | none | [ <common-lig-values> || <discretionary-lig-values> || <historical-lig-values> || <contextual-alt-val...`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variant-ligatures
+--- Grupos: CSS Fonts
+---@field font_variant_ligatures string|nil
+--- font-variant-numeric
+--- Sintaxe: `normal | [ <numeric-figure-values> || <numeric-spacing-values> || <numeric-fraction-values> || ordinal || slashed-zero ]`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variant-numeric
+--- Grupos: CSS Fonts
+---@field font_variant_numeric string|nil
+--- font-variant-position
+--- Sintaxe: `normal | sub | super`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variant-position
+--- Grupos: CSS Fonts
+---@field font_variant_position string|nil
+--- font-variation-settings
+--- Sintaxe: `normal | [ <string> <number> ]#`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-variation-settings
+--- Grupos: CSS Fonts
+---@field font_variation_settings number|string|nil
+--- font-weight
+--- Sintaxe: `<font-weight-absolute> | bolder | lighter`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/font-weight
+--- Grupos: CSS Fonts
+---@field font_weight string|nil
+--- font-width
+--- Sintaxe: `normal | <percentage [0,∞]> | ultra-condensed | extra-condensed | condensed | semi-condensed | semi-expanded | expa...`
+--- Valor inicial: `normal`
+--- Herdado: true
+--- Status: experimental
+--- Grupos: CSS Fonts
+---@field font_width string|nil
+--- forced-color-adjust
+--- Sintaxe: `auto | none | preserve-parent-color`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/forced-color-adjust
+--- Grupos: CSS Color
+---@field forced_color_adjust string|nil
+--- gap
+--- Sintaxe: `<'row-gap'> <'column-gap'>?`
+--- Valor inicial: `row-gap, column-gap`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/gap
+--- Grupos: CSS Box Alignment
+---@field gap string|nil
+--- hanging-punctuation
+--- Sintaxe: `none | [ first || [ force-end | allow-end ] || last ]`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hanging-punctuation
+--- Grupos: CSS Text
+---@field hanging_punctuation string|nil
+--- hyphenate-character
+--- Sintaxe: `auto | <string>`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hyphenate-character
+--- Grupos: CSS Text
+---@field hyphenate_character string|nil
+--- hyphenate-limit-chars
+--- Sintaxe: `[ auto | <integer> ]{1,3}`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hyphenate-limit-chars
+--- Grupos: CSS Text
+---@field hyphenate_limit_chars string|nil
+--- hyphens
+--- Sintaxe: `none | manual | auto`
+--- Valor inicial: `manual`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/hyphens
+--- Grupos: CSS Text
+---@field hyphens string|nil
+--- image-orientation
+--- Sintaxe: `from-image | <angle> | [ <angle>? flip ]`
+--- Valor inicial: `from-image`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/image-orientation
+--- Grupos: CSS Images
+---@field image_orientation string|nil
+--- image-rendering
+--- Sintaxe: `auto | crisp-edges | pixelated | smooth`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/image-rendering
+--- Grupos: CSS Images
+---@field image_rendering string|nil
+--- image-resolution
+--- Sintaxe: `[ from-image || <resolution> ] && snap?`
+--- Valor inicial: `1dppx`
+--- Herdado: true
+--- Status: experimental
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/image-resolution
+--- Grupos: CSS Images
+---@field image_resolution string|nil
+--- ime-mode
+--- Sintaxe: `auto | normal | active | inactive | disabled`
+--- Valor inicial: `auto`
+--- Herdado: false
+--- Status: obsolete
+--- Grupos: CSS Basic User Interface
+---@field ime_mode string|nil
+--- initial-letter
+--- Sintaxe: `normal | [ <number> <integer>? ]`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/initial-letter
+--- Grupos: CSS Inline
+---@field initial_letter number|string|nil
+--- initial-letter-align
+--- Sintaxe: `[ auto | alphabetic | hanging | ideographic ]`
+--- Valor inicial: `auto`
+--- Herdado: false
+--- Status: experimental
+--- Grupos: CSS Inline
+---@field initial_letter_align string|nil
+--- inset
+--- Sintaxe: `<'top'>{1,4}`
+--- Valor inicial: `top, bottom, left, right`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset
+--- Grupos: CSS Logical Properties and Values, CSS Positioned Layout
+---@field inset string|nil
+--- inset-block
+--- Sintaxe: `<'top'>{1,2}`
+--- Valor inicial: `inset-block-start, inset-block-end`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset-block
+--- Grupos: CSS Logical Properties and Values, CSS Positioned Layout
+---@field inset_block string|nil
+--- inset-block-end
+--- Sintaxe: `<'top'>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset-block-end
+--- Grupos: CSS Logical Properties and Values, CSS Positioned Layout
+---@field inset_block_end string|nil
+--- inset-block-start
+--- Sintaxe: `<'top'>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset-block-start
+--- Grupos: CSS Logical Properties and Values, CSS Positioned Layout
+---@field inset_block_start string|nil
+--- inset-inline
+--- Sintaxe: `<'top'>{1,2}`
+--- Valor inicial: `inset-inline-start, inset-inline-end`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset-inline
+--- Grupos: CSS Logical Properties and Values, CSS Positioned Layout
+---@field inset_inline string|nil
+--- inset-inline-end
+--- Sintaxe: `<'top'>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset-inline-end
+--- Grupos: CSS Logical Properties and Values, CSS Positioned Layout
+---@field inset_inline_end string|nil
+--- inset-inline-start
+--- Sintaxe: `<'top'>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/inset-inline-start
+--- Grupos: CSS Logical Properties and Values, CSS Positioned Layout
+---@field inset_inline_start string|nil
+--- interactivity
+--- Sintaxe: `auto | inert`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interactivity
+--- Grupos: CSS Basic User Interface
+---@field interactivity string|nil
+--- interest-delay
+--- Sintaxe: `<'interest-delay-start'>{1,2}`
+--- Valor inicial: `interest-delay-start, interest-delay-end`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay-end
+--- Grupos: CSS Basic User Interface
+---@field interest_delay string|nil
+--- interest-delay-end
+--- Sintaxe: `normal | <time>`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay-end
+--- Grupos: CSS Basic User Interface
+---@field interest_delay_end string|nil
+--- interest-delay-start
+--- Sintaxe: `normal | <time>`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interest-delay-start
+--- Grupos: CSS Basic User Interface
+---@field interest_delay_start string|nil
+--- interpolate-size
+--- Sintaxe: `numeric-only | allow-keywords`
+--- Valor inicial: `numeric-only`
+--- Herdado: true
+--- Status: experimental
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/interpolate-size
+--- Grupos: CSS Values and Units
+---@field interpolate_size string|nil
+--- justify-content
+--- Sintaxe: `normal | <content-distribution> | <overflow-position>? [ <content-position> | left | right ]`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/justify-content
+--- Grupos: CSS Box Alignment, CSS Flexible Box Layout
+---@field justify_content string|nil
+--- justify-items
+--- Sintaxe: `normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ] | legacy | legacy &&...`
+--- Valor inicial: `legacy`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/justify-items
+--- Grupos: CSS Box Alignment
+---@field justify_items string|nil
+--- justify-self
+--- Sintaxe: `auto | normal | stretch | <baseline-position> | <overflow-position>? [ <self-position> | left | right ] | anchor-center`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/justify-self
+--- Grupos: CSS Box Alignment
+---@field justify_self string|nil
+--- left
+--- Sintaxe: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/left
+--- Grupos: CSS Anchor Positioning, CSS Positioned Layout
+---@field left number|string|nil
+--- letter-spacing
+--- Sintaxe: `normal | <length>`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/letter-spacing
+--- Grupos: CSS Text
+---@field letter_spacing number|string|nil
+--- lighting-color
+--- Sintaxe: `<color>`
+--- Valor inicial: `white`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/lighting-color
+--- Grupos: Filter Effects
+---@field lighting_color string|nil
+--- line-break
+--- Sintaxe: `auto | loose | normal | strict | anywhere`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/line-break
+--- Grupos: CSS Text
+---@field line_break string|nil
+--- line-clamp
+--- Sintaxe: `none | <integer>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/line-clamp
+--- Grupos: CSS Overflow
+---@field line_clamp string|nil
+--- line-height
+--- Sintaxe: `normal | <number> | <length> | <percentage>`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/line-height
+--- Grupos: CSS Inline
+---@field line_height number|string|nil
+--- link-parameters
+--- Sintaxe: `none | <param()>#`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Status: experimental
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/link-parameters
+--- Grupos: CSS Values and Units
+---@field link_parameters string|nil
+--- list-style
+--- Sintaxe: `<'list-style-type'> || <'list-style-position'> || <'list-style-image'>`
+--- Valor inicial: `list-style-type, list-style-position, list-style-image`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/list-style
+--- Grupos: CSS Lists and Counters
+---@field list_style string|nil
+--- list-style-image
+--- Sintaxe: `<image> | none`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/list-style-image
+--- Grupos: CSS Lists and Counters
+---@field list_style_image string|nil
+--- list-style-position
+--- Sintaxe: `inside | outside`
+--- Valor inicial: `outside`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/list-style-position
+--- Grupos: CSS Lists and Counters
+---@field list_style_position string|nil
+--- list-style-type
+--- Sintaxe: `<counter-style> | <string> | none`
+--- Valor inicial: `disc`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/list-style-type
+--- Grupos: CSS Lists and Counters
+---@field list_style_type string|nil
+--- margin
+--- Sintaxe: `<'margin-top'>{1,4}`
+--- Valor inicial: `margin-bottom, margin-left, margin-right, margin-top`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin
+--- Grupos: CSS Box Model
+---@field margin string|nil
+--- margin-bottom
+--- Sintaxe: `<length-percentage> | auto | <anchor-size()>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin-bottom
+--- Grupos: CSS Anchor Positioning, CSS Box Model
+---@field margin_bottom number|string|nil
+--- margin-left
+--- Sintaxe: `<length-percentage> | auto | <anchor-size()>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin-left
+--- Grupos: CSS Anchor Positioning, CSS Box Model
+---@field margin_left number|string|nil
+--- margin-right
+--- Sintaxe: `<length-percentage> | auto | <anchor-size()>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin-right
+--- Grupos: CSS Anchor Positioning, CSS Box Model
+---@field margin_right number|string|nil
+--- margin-top
+--- Sintaxe: `<length-percentage> | auto | <anchor-size()>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin-top
+--- Grupos: CSS Anchor Positioning, CSS Box Model
+---@field margin_top number|string|nil
+--- margin-trim
+--- Sintaxe: `none | in-flow | all`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Status: experimental
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/margin-trim
+--- Grupos: CSS Box Model
+---@field margin_trim string|nil
+--- marker
+--- Sintaxe: `none | <url>`
+--- Valor inicial: `marker-start, marker-mid, marker-end`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/marker
+--- Grupos: Scalable Vector Graphics
+---@field marker string|nil
+--- marker-end
+--- Sintaxe: `none | <url>`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/marker-end
+--- Grupos: Scalable Vector Graphics
+---@field marker_end string|nil
+--- marker-mid
+--- Sintaxe: `none | <url>`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/marker-mid
+--- Grupos: Scalable Vector Graphics
+---@field marker_mid string|nil
+--- marker-start
+--- Sintaxe: `none | <url>`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/marker-start
+--- Grupos: Scalable Vector Graphics
+---@field marker_start string|nil
+--- mask
+--- Sintaxe: `<mask-layer>#`
+--- Valor inicial: `mask-image, mask-mode, mask-repeat, mask-position, mask-clip, mask-origin, ma...`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask
+--- Grupos: CSS Masking
+---@field mask string|nil
+--- mask-border
+--- Sintaxe: `<'mask-border-source'> || <'mask-border-slice'> [ / <'mask-border-width'>? [ / <'mask-border-outset'> ]? ]? || <'mask...`
+--- Valor inicial: `mask-border-mode, mask-border-outset, mask-border-repeat, mask-border-slice, ...`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-border
+--- Grupos: CSS Masking
+---@field mask_border string|nil
+--- mask-border-mode
+--- Sintaxe: `luminance | alpha`
+--- Valor inicial: `alpha`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-border-mode
+--- Grupos: CSS Masking
+---@field mask_border_mode string|nil
+--- mask-border-outset
+--- Sintaxe: `[ <length> | <number> ]{1,4}`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-border-outset
+--- Grupos: CSS Masking
+---@field mask_border_outset number|string|nil
+--- mask-border-repeat
+--- Sintaxe: `[ stretch | repeat | round | space ]{1,2}`
+--- Valor inicial: `stretch`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-border-repeat
+--- Grupos: CSS Masking
+---@field mask_border_repeat string|nil
+--- mask-border-slice
+--- Sintaxe: `<number-percentage>{1,4} fill?`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-border-slice
+--- Grupos: CSS Masking
+---@field mask_border_slice string|nil
+--- mask-border-source
+--- Sintaxe: `none | <image>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-border-source
+--- Grupos: CSS Masking
+---@field mask_border_source string|nil
+--- mask-border-width
+--- Sintaxe: `[ <length-percentage> | <number> | auto ]{1,4}`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-border-width
+--- Grupos: CSS Masking
+---@field mask_border_width number|string|nil
+--- mask-clip
+--- Sintaxe: `[ <coord-box> | no-clip ]#`
+--- Valor inicial: `border-box`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-clip
+--- Grupos: CSS Masking
+---@field mask_clip string|nil
+--- mask-composite
+--- Sintaxe: `<compositing-operator>#`
+--- Valor inicial: `add`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-composite
+--- Grupos: CSS Masking
+---@field mask_composite string|nil
+--- mask-image
+--- Sintaxe: `<mask-reference>#`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-image
+--- Grupos: CSS Masking
+---@field mask_image string|nil
+--- mask-mode
+--- Sintaxe: `<masking-mode>#`
+--- Valor inicial: `match-source`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-mode
+--- Grupos: CSS Masking
+---@field mask_mode string|nil
+--- mask-origin
+--- Sintaxe: `<coord-box>#`
+--- Valor inicial: `border-box`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-origin
+--- Grupos: CSS Masking
+---@field mask_origin string|nil
+--- mask-position
+--- Sintaxe: `<position>#`
+--- Valor inicial: `0% 0%`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-position
+--- Grupos: CSS Masking
+---@field mask_position string|nil
+--- mask-repeat
+--- Sintaxe: `<repeat-style>#`
+--- Valor inicial: `repeat`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-repeat
+--- Grupos: CSS Masking
+---@field mask_repeat string|nil
+--- mask-size
+--- Sintaxe: `<bg-size>#`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-size
+--- Grupos: CSS Masking
+---@field mask_size string|nil
+--- mask-type
+--- Sintaxe: `luminance | alpha`
+--- Valor inicial: `luminance`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/mask-type
+--- Grupos: CSS Masking
+---@field mask_type string|nil
+--- max-lines
+--- Sintaxe: `none | <integer>`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Status: experimental
+--- Grupos: CSS Overflow
+---@field max_lines string|nil
+--- object-fit
+--- Sintaxe: `fill | contain | cover | none | scale-down`
+--- Valor inicial: `fill`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/object-fit
+--- Grupos: CSS Images
+---@field object_fit string|nil
+--- object-position
+--- Sintaxe: `<position>`
+--- Valor inicial: `50% 50%`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/object-position
+--- Grupos: CSS Images
+---@field object_position string|nil
+--- object-view-box
+--- Sintaxe: `none | <basic-shape-rect>`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Status: experimental
+--- Grupos: CSS Images
+---@field object_view_box string|nil
+--- opacity
+--- Sintaxe: `<opacity-value>`
+--- Valor inicial: `1`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/opacity
+--- Grupos: CSS Color
+---@field opacity string|nil
+--- order
+--- Sintaxe: `<integer>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/order
+--- Grupos: CSS Display
+---@field order integer|string|nil
+--- orphans
+--- Sintaxe: `<integer>`
+--- Valor inicial: `2`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/orphans
+--- Grupos: CSS Fragmentation
+---@field orphans integer|string|nil
+--- outline
+--- Sintaxe: `<'outline-width'> || <'outline-style'> || <'outline-color'>`
+--- Valor inicial: `outline-width, outline-style, outline-color`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/outline
+--- Grupos: CSS Basic User Interface
+---@field outline string|nil
+--- outline-color
+--- Sintaxe: `auto | <color>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/outline-color
+--- Grupos: CSS Basic User Interface
+---@field outline_color string|nil
+--- outline-offset
+--- Sintaxe: `<length>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/outline-offset
+--- Grupos: CSS Basic User Interface
+---@field outline_offset number|string|nil
+--- outline-style
+--- Sintaxe: `auto | <outline-line-style>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/outline-style
+--- Grupos: CSS Basic User Interface
+---@field outline_style string|nil
+--- outline-width
+--- Sintaxe: `<line-width>`
+--- Valor inicial: `medium`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/outline-width
+--- Grupos: CSS Basic User Interface
+---@field outline_width string|nil
+--- overflow
+--- Sintaxe: `[ visible | hidden | clip | scroll | auto ]{1,2}`
+--- Valor inicial: `visible`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow
+--- Grupos: CSS Overflow
+---@field overflow string|nil
+--- overflow-block
+--- Sintaxe: `visible | hidden | clip | scroll | auto`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-block
+--- Grupos: CSS Overflow
+---@field overflow_block string|nil
+--- overflow-clip-margin
+--- Sintaxe: `<visual-box> || <length [0,∞]>`
+--- Valor inicial: `0px`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-clip-margin
+--- Grupos: CSS Overflow
+---@field overflow_clip_margin number|string|nil
+--- overflow-inline
+--- Sintaxe: `visible | hidden | clip | scroll | auto`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-inline
+--- Grupos: CSS Overflow
+---@field overflow_inline string|nil
+--- overflow-wrap
+--- Sintaxe: `normal | break-word | anywhere`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-wrap
+--- Grupos: CSS Text
+---@field overflow_wrap string|nil
+--- overflow-x
+--- Sintaxe: `visible | hidden | clip | scroll | auto`
+--- Valor inicial: `visible`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-x
+--- Grupos: CSS Overflow
+---@field overflow_x string|nil
+--- overflow-y
+--- Sintaxe: `visible | hidden | clip | scroll | auto`
+--- Valor inicial: `visible`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-y
+--- Grupos: CSS Overflow
+---@field overflow_y string|nil
+--- overlay
+--- Sintaxe: `none | auto`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Status: experimental
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overlay
+--- Grupos: CSS Positioned Layout
+---@field overlay string|nil
+--- padding
+--- Sintaxe: `<'padding-top'>{1,4}`
+--- Valor inicial: `padding-bottom, padding-left, padding-right, padding-top`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/padding
+--- Grupos: CSS Box Model
+---@field padding string|nil
+--- padding-bottom
+--- Sintaxe: `<length-percentage [0,∞]>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/padding-bottom
+--- Grupos: CSS Box Model
+---@field padding_bottom number|string|nil
+--- padding-left
+--- Sintaxe: `<length-percentage [0,∞]>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/padding-left
+--- Grupos: CSS Box Model
+---@field padding_left number|string|nil
+--- padding-right
+--- Sintaxe: `<length-percentage [0,∞]>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/padding-right
+--- Grupos: CSS Box Model
+---@field padding_right number|string|nil
+--- padding-top
+--- Sintaxe: `<length-percentage [0,∞]>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/padding-top
+--- Grupos: CSS Box Model
+---@field padding_top number|string|nil
+--- paint-order
+--- Sintaxe: `normal | [ fill || stroke || markers ]`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/paint-order
+--- Grupos: Scalable Vector Graphics
+---@field paint_order string|nil
+--- path-length
+--- Sintaxe: `none | <length> [0,∞]`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/path-length
+--- Grupos: Scalable Vector Graphics
+---@field path_length number|string|nil
+--- perspective
+--- Sintaxe: `none | <length>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/perspective
+--- Grupos: CSS Transforms
+---@field perspective number|string|nil
+--- perspective-origin
+--- Sintaxe: `<position>`
+--- Valor inicial: `50% 50%`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/perspective-origin
+--- Grupos: CSS Transforms
+---@field perspective_origin string|nil
+--- place-content
+--- Sintaxe: `<'align-content'> <'justify-content'>?`
+--- Valor inicial: `align-content, justify-content`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/place-content
+--- Grupos: CSS Box Alignment
+---@field place_content string|nil
+--- place-items
+--- Sintaxe: `<'align-items'> <'justify-items'>?`
+--- Valor inicial: `align-items, justify-items`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/place-items
+--- Grupos: CSS Box Alignment
+---@field place_items string|nil
+--- place-self
+--- Sintaxe: `<'align-self'> <'justify-self'>?`
+--- Valor inicial: `align-self, justify-self`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/place-self
+--- Grupos: CSS Box Alignment
+---@field place_self string|nil
+--- pointer-events
+--- Sintaxe: `auto | none | visiblePainted | visibleFill | visibleStroke | visible | painted | fill | stroke | all | inherit`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/pointer-events
+--- Grupos: CSS Basic User Interface
+---@field pointer_events string|nil
+--- position
+--- Sintaxe: `static | relative | absolute | sticky | fixed`
+--- Valor inicial: `static`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/position
+--- Grupos: CSS Positioned Layout
+---@field position string|nil
+--- print-color-adjust
+--- Sintaxe: `economy | exact`
+--- Valor inicial: `economy`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/print-color-adjust
+--- Grupos: CSS Color
+---@field print_color_adjust string|nil
+--- r
+--- Sintaxe: `<length> | <percentage>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/r
+--- Grupos: Scalable Vector Graphics
+---@field r number|string|nil
+--- reading-flow
+--- Sintaxe: `normal | source-order | flex-visual | flex-flow | grid-rows | grid-columns | grid-order`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/reading-flow
+--- Grupos: CSS Display
+---@field reading_flow string|nil
+--- reading-order
+--- Sintaxe: `<integer>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/reading-order
+--- Grupos: CSS Display
+---@field reading_order integer|string|nil
+--- resize
+--- Sintaxe: `none | both | horizontal | vertical | block | inline`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/resize
+--- Grupos: CSS Basic User Interface
+---@field resize string|nil
+--- right
+--- Sintaxe: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/right
+--- Grupos: CSS Anchor Positioning, CSS Positioned Layout
+---@field right number|string|nil
+--- rotate
+--- Sintaxe: `none | <angle> | [ x | y | z | <number>{3} ] && <angle>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rotate
+--- Grupos: CSS Transforms
+---@field rotate number|string|nil
+--- row-gap
+--- Sintaxe: `normal | <length-percentage>`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/row-gap
+--- Grupos: CSS Box Alignment
+---@field row_gap number|string|nil
+--- rx
+--- Sintaxe: `<length-percentage> | auto`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/rx
+--- Grupos: Scalable Vector Graphics
+---@field rx number|string|nil
+--- ry
+--- Sintaxe: `<length-percentage> | auto`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/ry
+--- Grupos: Scalable Vector Graphics
+---@field ry number|string|nil
+--- scale
+--- Sintaxe: `none | [ <number> | <percentage> ]{1,3}`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scale
+--- Grupos: CSS Transforms
+---@field scale number|string|nil
+--- scroll-axis-lock
+--- Sintaxe: `auto | none`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-axis-lock
+--- Grupos: CSS Overflow
+---@field scroll_axis_lock string|nil
+--- scroll-behavior
+--- Sintaxe: `auto | smooth`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-behavior
+--- Grupos: CSS Overflow
+---@field scroll_behavior string|nil
+--- scroll-initial-target
+--- Sintaxe: `none | nearest`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Status: experimental
+--- Grupos: CSS Scroll Snap
+---@field scroll_initial_target string|nil
+--- scroll-margin
+--- Sintaxe: `<length>{1,4}`
+--- Valor inicial: `scroll-margin-bottom, scroll-margin-left, scroll-margin-right, scroll-margin-top`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin
+--- Grupos: CSS Scroll Snap
+---@field scroll_margin number|string|nil
+--- scroll-margin-block
+--- Sintaxe: `<length>{1,2}`
+--- Valor inicial: `scroll-margin-block-start, scroll-margin-block-end`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-block
+--- Grupos: CSS Scroll Snap
+---@field scroll_margin_block number|string|nil
+--- scroll-margin-block-end
+--- Sintaxe: `<length>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-block-end
+--- Grupos: CSS Scroll Snap
+---@field scroll_margin_block_end number|string|nil
+--- scroll-margin-block-start
+--- Sintaxe: `<length>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-block-start
+--- Grupos: CSS Scroll Snap
+---@field scroll_margin_block_start number|string|nil
+--- scroll-margin-bottom
+--- Sintaxe: `<length>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-bottom
+--- Grupos: CSS Scroll Snap
+---@field scroll_margin_bottom number|string|nil
+--- scroll-margin-inline
+--- Sintaxe: `<length>{1,2}`
+--- Valor inicial: `scroll-margin-inline-start, scroll-margin-inline-end`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-inline
+--- Grupos: CSS Scroll Snap
+---@field scroll_margin_inline number|string|nil
+--- scroll-margin-inline-end
+--- Sintaxe: `<length>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-inline-end
+--- Grupos: CSS Scroll Snap
+---@field scroll_margin_inline_end number|string|nil
+--- scroll-margin-inline-start
+--- Sintaxe: `<length>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-inline-start
+--- Grupos: CSS Scroll Snap
+---@field scroll_margin_inline_start number|string|nil
+--- scroll-margin-left
+--- Sintaxe: `<length>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-left
+--- Grupos: CSS Scroll Snap
+---@field scroll_margin_left number|string|nil
+--- scroll-margin-right
+--- Sintaxe: `<length>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-right
+--- Grupos: CSS Scroll Snap
+---@field scroll_margin_right number|string|nil
+--- scroll-margin-top
+--- Sintaxe: `<length>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-margin-top
+--- Grupos: CSS Scroll Snap
+---@field scroll_margin_top number|string|nil
+--- scroll-marker-group
+--- Sintaxe: `none | before | after`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-marker-group
+--- Grupos: CSS Overflow
+---@field scroll_marker_group string|nil
+--- scroll-padding
+--- Sintaxe: `[ auto | <length-percentage> ]{1,4}`
+--- Valor inicial: `scroll-padding-bottom, scroll-padding-left, scroll-padding-right, scroll-padd...`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding
+--- Grupos: CSS Scroll Snap
+---@field scroll_padding number|string|nil
+--- scroll-padding-block
+--- Sintaxe: `[ auto | <length-percentage> ]{1,2}`
+--- Valor inicial: `scroll-padding-block-start, scroll-padding-block-end`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-block
+--- Grupos: CSS Scroll Snap
+---@field scroll_padding_block number|string|nil
+--- scroll-padding-block-end
+--- Sintaxe: `auto | <length-percentage>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-block-end
+--- Grupos: CSS Scroll Snap
+---@field scroll_padding_block_end number|string|nil
+--- scroll-padding-block-start
+--- Sintaxe: `auto | <length-percentage>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-block-start
+--- Grupos: CSS Scroll Snap
+---@field scroll_padding_block_start number|string|nil
+--- scroll-padding-bottom
+--- Sintaxe: `auto | <length-percentage>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-bottom
+--- Grupos: CSS Scroll Snap
+---@field scroll_padding_bottom number|string|nil
+--- scroll-padding-inline
+--- Sintaxe: `[ auto | <length-percentage> ]{1,2}`
+--- Valor inicial: `scroll-padding-inline-start, scroll-padding-inline-end`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-inline
+--- Grupos: CSS Scroll Snap
+---@field scroll_padding_inline number|string|nil
+--- scroll-padding-inline-end
+--- Sintaxe: `auto | <length-percentage>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-inline-end
+--- Grupos: CSS Scroll Snap
+---@field scroll_padding_inline_end number|string|nil
+--- scroll-padding-inline-start
+--- Sintaxe: `auto | <length-percentage>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-inline-start
+--- Grupos: CSS Scroll Snap
+---@field scroll_padding_inline_start number|string|nil
+--- scroll-padding-left
+--- Sintaxe: `auto | <length-percentage>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-left
+--- Grupos: CSS Scroll Snap
+---@field scroll_padding_left number|string|nil
+--- scroll-padding-right
+--- Sintaxe: `auto | <length-percentage>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-right
+--- Grupos: CSS Scroll Snap
+---@field scroll_padding_right number|string|nil
+--- scroll-padding-top
+--- Sintaxe: `auto | <length-percentage>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-padding-top
+--- Grupos: CSS Scroll Snap
+---@field scroll_padding_top number|string|nil
+--- scroll-snap-align
+--- Sintaxe: `[ none | start | end | center ]{1,2}`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-snap-align
+--- Grupos: CSS Scroll Snap
+---@field scroll_snap_align string|nil
+--- scroll-snap-coordinate
+--- Sintaxe: `none | <position>#`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Status: obsolete
+--- Grupos: CSS Scroll Snap
+---@field scroll_snap_coordinate string|nil
+--- scroll-snap-destination
+--- Sintaxe: `<position>`
+--- Valor inicial: `0px 0px`
+--- Herdado: false
+--- Status: obsolete
+--- Grupos: CSS Scroll Snap
+---@field scroll_snap_destination string|nil
+--- scroll-snap-points-x
+--- Sintaxe: `none | repeat( <length-percentage> )`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Status: obsolete
+--- Grupos: CSS Scroll Snap
+---@field scroll_snap_points_x number|string|nil
+--- scroll-snap-points-y
+--- Sintaxe: `none | repeat( <length-percentage> )`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Status: obsolete
+--- Grupos: CSS Scroll Snap
+---@field scroll_snap_points_y number|string|nil
+--- scroll-snap-stop
+--- Sintaxe: `normal | always`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-snap-stop
+--- Grupos: CSS Scroll Snap
+---@field scroll_snap_stop string|nil
+--- scroll-snap-type
+--- Sintaxe: `none | [ x | y | block | inline | both ] [ mandatory | proximity ]?`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-snap-type
+--- Grupos: CSS Scroll Snap
+---@field scroll_snap_type string|nil
+--- scroll-snap-type-x
+--- Sintaxe: `none | mandatory | proximity`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Status: obsolete
+--- Grupos: CSS Scroll Snap
+---@field scroll_snap_type_x string|nil
+--- scroll-snap-type-y
+--- Sintaxe: `none | mandatory | proximity`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Status: obsolete
+--- Grupos: CSS Scroll Snap
+---@field scroll_snap_type_y string|nil
+--- scroll-target-group
+--- Sintaxe: `none | auto`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scroll-target-group
+--- Grupos: CSS Overflow
+---@field scroll_target_group string|nil
+--- scrollbar-gutter
+--- Sintaxe: `auto | stable && both-edges?`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/scrollbar-gutter
+--- Grupos: CSS Overflow
+---@field scrollbar_gutter string|nil
+--- shape-image-threshold
+--- Sintaxe: `<opacity-value>`
+--- Valor inicial: `0.0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/shape-image-threshold
+--- Grupos: CSS Shapes
+---@field shape_image_threshold string|nil
+--- shape-margin
+--- Sintaxe: `<length-percentage>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/shape-margin
+--- Grupos: CSS Shapes
+---@field shape_margin number|string|nil
+--- shape-outside
+--- Sintaxe: `none | [ <shape-box> || <basic-shape> ] | <image>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/shape-outside
+--- Grupos: CSS Shapes
+---@field shape_outside string|nil
+--- shape-rendering
+--- Sintaxe: `auto | optimizeSpeed | crispEdges | geometricPrecision`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/shape-rendering
+--- Grupos: Scalable Vector Graphics
+---@field shape_rendering string|nil
+--- speak-as
+--- Sintaxe: `normal | spell-out || digits || [ literal-punctuation | no-punctuation ]`
+--- Valor inicial: `auto`
+--- Herdado: true
+--- Status: experimental
+--- Grupos: CSS Speech
+---@field speak_as string|nil
+--- stop-color
+--- Sintaxe: `<'color'>`
+--- Valor inicial: `black`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stop-color
+--- Grupos: Scalable Vector Graphics
+---@field stop_color string|nil
+--- stop-opacity
+--- Sintaxe: `<'opacity'>`
+--- Valor inicial: `black`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stop-opacity
+--- Grupos: Scalable Vector Graphics
+---@field stop_opacity string|nil
+--- stroke
+--- Sintaxe: `<paint>`
+--- Valor inicial: `stroke-dasharray, stroke-dashoffset, stroke-linecap, stroke-linejoin, stroke-...`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stroke
+--- Grupos: Scalable Vector Graphics
+---@field stroke string|nil
+--- stroke-color
+--- Sintaxe: `<color>`
+--- Valor inicial: `transparent`
+--- Herdado: true
+--- Status: experimental
+--- Grupos: Scalable Vector Graphics
+---@field stroke_color string|nil
+--- stroke-dasharray
+--- Sintaxe: `none | <dasharray>`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stroke-dasharray
+--- Grupos: Scalable Vector Graphics
+---@field stroke_dasharray string|nil
+--- stroke-dashoffset
+--- Sintaxe: `<length-percentage> | <number>`
+--- Valor inicial: `0`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stroke-dashoffset
+--- Grupos: Scalable Vector Graphics
+---@field stroke_dashoffset number|string|nil
+--- stroke-linecap
+--- Sintaxe: `butt | round | square`
+--- Valor inicial: `butt`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stroke-linecap
+--- Grupos: Scalable Vector Graphics
+---@field stroke_linecap string|nil
+--- stroke-linejoin
+--- Sintaxe: `miter | miter-clip | round | bevel | arcs`
+--- Valor inicial: `miter`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stroke-linejoin
+--- Grupos: Scalable Vector Graphics
+---@field stroke_linejoin string|nil
+--- stroke-miterlimit
+--- Sintaxe: `<number>`
+--- Valor inicial: `4`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stroke-miterlimit
+--- Grupos: Scalable Vector Graphics
+---@field stroke_miterlimit number|string|nil
+--- stroke-opacity
+--- Sintaxe: `<'opacity'>`
+--- Valor inicial: `1`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stroke-opacity
+--- Grupos: Scalable Vector Graphics
+---@field stroke_opacity string|nil
+--- stroke-width
+--- Sintaxe: `<length-percentage> | <number>`
+--- Valor inicial: `1px`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/stroke-width
+--- Grupos: Scalable Vector Graphics
+---@field stroke_width number|string|nil
+--- tab-size
+--- Sintaxe: `<integer> | <length>`
+--- Valor inicial: `8`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/tab-size
+--- Grupos: CSS Text
+---@field tab_size number|string|nil
+--- text-align
+--- Sintaxe: `start | end | left | right | center | justify | match-parent`
+--- Valor inicial: `startOrNamelessValueIfLTRRightIfRTL`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-align
+--- Grupos: CSS Text
+---@field text_align string|nil
+--- text-align-last
+--- Sintaxe: `auto | start | end | left | right | center | justify`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-align-last
+--- Grupos: CSS Text
+---@field text_align_last string|nil
+--- text-anchor
+--- Sintaxe: `start | middle | end`
+--- Valor inicial: `start`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-anchor
+--- Grupos: Scalable Vector Graphics
+---@field text_anchor string|nil
+--- text-autospace
+--- Sintaxe: `normal | <autospace> | auto`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-autospace
+--- Grupos: CSS Text
+---@field text_autospace string|nil
+--- text-box
+--- Sintaxe: `normal | <'text-box-trim'> || <'text-box-edge'>`
+--- Valor inicial: `normal`
+--- Herdado: false
+--- Grupos: CSS Inline
+---@field text_box string|nil
+--- text-box-edge
+--- Sintaxe: `auto | <text-edge>`
+--- Valor inicial: `auto`
+--- Herdado: false
+--- Grupos: CSS Inline
+---@field text_box_edge string|nil
+--- text-box-trim
+--- Sintaxe: `none | trim-start | trim-end | trim-both`
+--- Valor inicial: `none`
+--- Herdado: false
+--- Grupos: CSS Inline
+---@field text_box_trim string|nil
+--- text-combine-upright
+--- Sintaxe: `none | all | [ digits <integer>? ]`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-combine-upright
+--- Grupos: CSS Writing Modes
+---@field text_combine_upright string|nil
+--- text-decoration
+--- Sintaxe: `<'text-decoration-line'> || <'text-decoration-style'> || <'text-decoration-color'> || <'text-decoration-thickness'>`
+--- Valor inicial: `text-decoration-color, text-decoration-style, text-decoration-line`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration
+--- Grupos: CSS Text Decoration
+---@field text_decoration string|nil
+--- text-decoration-color
+--- Sintaxe: `<color>`
+--- Valor inicial: `currentcolor`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-color
+--- Grupos: CSS Text Decoration
+---@field text_decoration_color string|nil
+--- text-decoration-inset
+--- Sintaxe: `<length-percentage>{1,2} | auto`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-inset
+--- Grupos: CSS Text Decoration
+---@field text_decoration_inset number|string|nil
+--- text-decoration-line
+--- Sintaxe: `none | [ underline || overline || line-through || blink ] | spelling-error | grammar-error`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-line
+--- Grupos: CSS Text Decoration
+---@field text_decoration_line string|nil
+--- text-decoration-skip
+--- Sintaxe: `none | [ objects || [ spaces | [ leading-spaces || trailing-spaces ] ] || edges || box-decoration ]`
+--- Valor inicial: `objects`
+--- Herdado: true
+--- Status: experimental
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-skip
+--- Grupos: CSS Text Decoration
+---@field text_decoration_skip string|nil
+--- text-decoration-skip-ink
+--- Sintaxe: `auto | all | none`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-skip-ink
+--- Grupos: CSS Text Decoration
+---@field text_decoration_skip_ink string|nil
+--- text-decoration-style
+--- Sintaxe: `solid | double | dotted | dashed | wavy`
+--- Valor inicial: `solid`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-style
+--- Grupos: CSS Text Decoration
+---@field text_decoration_style string|nil
+--- text-decoration-thickness
+--- Sintaxe: `auto | from-font | <length> | <percentage>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-decoration-thickness
+--- Grupos: CSS Text Decoration
+---@field text_decoration_thickness number|string|nil
+--- text-emphasis
+--- Sintaxe: `<'text-emphasis-style'> || <'text-emphasis-color'>`
+--- Valor inicial: `text-emphasis-style, text-emphasis-color`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-emphasis
+--- Grupos: CSS Text Decoration
+---@field text_emphasis string|nil
+--- text-emphasis-color
+--- Sintaxe: `<color>`
+--- Valor inicial: `currentcolor`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-emphasis-color
+--- Grupos: CSS Text Decoration
+---@field text_emphasis_color string|nil
+--- text-emphasis-position
+--- Sintaxe: `auto | [ over | under ] && [ right | left ]?`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-emphasis-position
+--- Grupos: CSS Text Decoration
+---@field text_emphasis_position string|nil
+--- text-emphasis-style
+--- Sintaxe: `none | [ [ filled | open ] || [ dot | circle | double-circle | triangle | sesame ] ] | <string>`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-emphasis-style
+--- Grupos: CSS Text Decoration
+---@field text_emphasis_style string|nil
+--- text-fit
+--- Sintaxe: `[ none | grow | shrink ] [consistent | per-line | per-line-all]? <percentage>?`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-fit
+--- Grupos: CSS Text
+---@field text_fit number|string|nil
+--- text-indent
+--- Sintaxe: `<length-percentage> && hanging? && each-line?`
+--- Valor inicial: `0`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-indent
+--- Grupos: CSS Text
+---@field text_indent number|string|nil
+--- text-justify
+--- Sintaxe: `auto | inter-character | inter-word | none`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-justify
+--- Grupos: CSS Text
+---@field text_justify string|nil
+--- text-orientation
+--- Sintaxe: `mixed | upright | sideways`
+--- Valor inicial: `mixed`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-orientation
+--- Grupos: CSS Writing Modes
+---@field text_orientation string|nil
+--- text-overflow
+--- Sintaxe: `[ clip | ellipsis | <string> ]{1,2}`
+--- Valor inicial: `clip`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-overflow
+--- Grupos: CSS Overflow
+---@field text_overflow string|nil
+--- text-rendering
+--- Sintaxe: `auto | optimizeSpeed | optimizeLegibility | geometricPrecision`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-rendering
+--- Grupos: Scalable Vector Graphics
+---@field text_rendering string|nil
+--- text-shadow
+--- Sintaxe: `none | <shadow-t>#`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-shadow
+--- Grupos: CSS Text Decoration
+---@field text_shadow string|nil
+--- text-spacing-trim
+--- Sintaxe: `space-all | normal | space-first | trim-start`
+--- Valor inicial: `normal`
+--- Herdado: true
+--- Status: experimental
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-spacing-trim
+--- Grupos: CSS Text
+---@field text_spacing_trim string|nil
+--- text-transform
+--- Sintaxe: `none | [ capitalize | uppercase | lowercase ] || full-width || full-size-kana | math-auto`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-transform
+--- Grupos: CSS Text, MathML
+---@field text_transform string|nil
+--- text-underline-offset
+--- Sintaxe: `auto | <length> | <percentage>`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-underline-offset
+--- Grupos: CSS Text Decoration
+---@field text_underline_offset number|string|nil
+--- text-underline-position
+--- Sintaxe: `auto | from-font | [ under || [ left | right ] ]`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-underline-position
+--- Grupos: CSS Text Decoration
+---@field text_underline_position string|nil
+--- text-wrap
+--- Sintaxe: `<'text-wrap-mode'> || <'text-wrap-style'>`
+--- Valor inicial: `wrap`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-wrap
+--- Grupos: CSS Text
+---@field text_wrap string|nil
+--- text-wrap-mode
+--- Sintaxe: `wrap | nowrap`
+--- Valor inicial: `wrap`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-wrap-mode
+--- Grupos: CSS Text
+---@field text_wrap_mode string|nil
+--- text-wrap-style
+--- Sintaxe: `auto | balance | stable | pretty`
+--- Valor inicial: `auto`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/text-wrap-style
+--- Grupos: CSS Text
+---@field text_wrap_style string|nil
+--- timeline-trigger
+--- Sintaxe: `none | [ <'timeline-trigger-name'> <'timeline-trigger-source'> <'timeline-trigger-activation-range'> [ '/' <'timeline...`
+--- Valor inicial: `timeline-trigger-name, timeline-trigger-source, timeline-trigger-activation-r...`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger
+--- Grupos: CSS Animations
+---@field timeline_trigger string|nil
+--- timeline-trigger-activation-range
+--- Sintaxe: `[ <'timeline-trigger-activation-range-start'> <'timeline-trigger-activation-range-end'>? ]#`
+--- Valor inicial: `timeline-trigger-activation-range-start, timeline-trigger-activation-range-end`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range
+--- Grupos: CSS Animations
+---@field timeline_trigger_activation_range string|nil
+--- timeline-trigger-activation-range-end
+--- Sintaxe: `[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range-end
+--- Grupos: CSS Animations
+---@field timeline_trigger_activation_range_end number|string|nil
+--- timeline-trigger-activation-range-start
+--- Sintaxe: `[ normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-activation-range-start
+--- Grupos: CSS Animations
+---@field timeline_trigger_activation_range_start number|string|nil
+--- timeline-trigger-active-range
+--- Sintaxe: `[ <'timeline-trigger-active-range-start'> <'timeline-trigger-active-range-end'>? ]#`
+--- Valor inicial: `timeline-trigger-active-range-start, timeline-trigger-active-range-end`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range
+--- Grupos: CSS Animations
+---@field timeline_trigger_active_range string|nil
+--- timeline-trigger-active-range-end
+--- Sintaxe: `[ auto | normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range-end
+--- Grupos: CSS Animations
+---@field timeline_trigger_active_range_end number|string|nil
+--- timeline-trigger-active-range-start
+--- Sintaxe: `[ auto | normal | <length-percentage> | <timeline-range-name> <length-percentage>? ]#`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-active-range-start
+--- Grupos: CSS Animations
+---@field timeline_trigger_active_range_start number|string|nil
+--- timeline-trigger-name
+--- Sintaxe: `none | <dashed-ident>#`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-name
+--- Grupos: CSS Animations
+---@field timeline_trigger_name string|nil
+--- timeline-trigger-source
+--- Sintaxe: `<single-animation-timeline>#`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/timeline-trigger-source
+--- Grupos: CSS Animations
+---@field timeline_trigger_source string|nil
+--- top
+--- Sintaxe: `auto | <length-percentage> | <anchor()> | <anchor-size()>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/top
+--- Grupos: CSS Anchor Positioning, CSS Positioned Layout
+---@field top number|string|nil
+--- transform
+--- Sintaxe: `none | <transform-list>`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transform
+--- Grupos: CSS Transforms
+---@field transform string|nil
+--- transform-box
+--- Sintaxe: `content-box | border-box | fill-box | stroke-box | view-box`
+--- Valor inicial: `view-box`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transform-box
+--- Grupos: CSS Transforms
+---@field transform_box string|nil
+--- transform-origin
+--- Sintaxe: `[ <length-percentage> | left | center | right | top | bottom ] | [ [ <length-percentage> | left | center | right ] &&...`
+--- Valor inicial: `50% 50% 0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transform-origin
+--- Grupos: CSS Transforms
+---@field transform_origin number|string|nil
+--- transform-style
+--- Sintaxe: `flat | preserve-3d`
+--- Valor inicial: `flat`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transform-style
+--- Grupos: CSS Transforms
+---@field transform_style string|nil
+--- transition
+--- Sintaxe: `<single-transition>#`
+--- Valor inicial: `transition-delay, transition-duration, transition-property, transition-timing...`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transition
+--- Grupos: CSS Transitions
+---@field transition string|nil
+--- transition-behavior
+--- Sintaxe: `<transition-behavior-value>#`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transition-behavior
+--- Grupos: CSS Transitions
+---@field transition_behavior string|nil
+--- transition-delay
+--- Sintaxe: `<time>#`
+--- Valor inicial: `0s`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transition-delay
+--- Grupos: CSS Transitions
+---@field transition_delay string|nil
+--- transition-duration
+--- Sintaxe: `<time>#`
+--- Valor inicial: `0s`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transition-duration
+--- Grupos: CSS Transitions
+---@field transition_duration string|nil
+--- transition-property
+--- Sintaxe: `none | <single-transition-property>#`
+--- Valor inicial: `all`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transition-property
+--- Grupos: CSS Transitions
+---@field transition_property string|nil
+--- transition-timing-function
+--- Sintaxe: `<easing-function>#`
+--- Valor inicial: `ease`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/transition-timing-function
+--- Grupos: CSS Transitions
+---@field transition_timing_function string|nil
+--- translate
+--- Sintaxe: `none | <length-percentage> [ <length-percentage> <length>? ]?`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/translate
+--- Grupos: CSS Transforms
+---@field translate number|string|nil
+--- trigger-scope
+--- Sintaxe: `none | all | <dashed-ident>#`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/trigger-scope
+--- Grupos: CSS Animations
+---@field trigger_scope string|nil
+--- unicode-bidi
+--- Sintaxe: `normal | embed | isolate | bidi-override | isolate-override | plaintext`
+--- Valor inicial: `normal`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/unicode-bidi
+--- Grupos: CSS Writing Modes
+---@field unicode_bidi string|nil
+--- user-select
+--- Sintaxe: `auto | text | none | all`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/user-select
+--- Grupos: CSS Basic User Interface
+---@field user_select string|nil
+--- vector-effect
+--- Sintaxe: `none | non-scaling-stroke | non-scaling-size | non-rotation | fixed-position`
+--- Valor inicial: `none`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/vector-effect
+--- Grupos: Scalable Vector Graphics
+---@field vector_effect string|nil
+--- vertical-align
+--- Sintaxe: `baseline | sub | super | text-top | text-bottom | middle | top | bottom | <percentage> | <length>`
+--- Valor inicial: `baseline`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/vertical-align
+--- Grupos: CSS Inline
+---@field vertical_align number|string|nil
+--- visibility
+--- Sintaxe: `visible | hidden | collapse`
+--- Valor inicial: `visible`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/visibility
+--- Grupos: CSS Display, Scalable Vector Graphics
+---@field visibility string|nil
+--- white-space
+--- Sintaxe: `normal | pre | pre-wrap | pre-line | <'white-space-collapse'> || <'text-wrap-mode'>`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/white-space
+--- Grupos: CSS Text
+---@field white_space string|nil
+--- white-space-collapse
+--- Sintaxe: `collapse | preserve | preserve-breaks | preserve-spaces | break-spaces`
+--- Valor inicial: `collapse`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/white-space-collapse
+--- Grupos: CSS Text
+---@field white_space_collapse string|nil
+--- widows
+--- Sintaxe: `<integer>`
+--- Valor inicial: `2`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/widows
+--- Grupos: CSS Fragmentation
+---@field widows integer|string|nil
+--- window-drag
+--- Sintaxe: `none | move`
+--- Valor inicial: `none`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/window-drag
+--- Grupos: CSS Basic User Interface
+---@field window_drag string|nil
+--- word-break
+--- Sintaxe: `normal | break-all | keep-all | break-word | auto-phrase`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/word-break
+--- Grupos: CSS Text
+---@field word_break string|nil
+--- word-spacing
+--- Sintaxe: `normal | <length>`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/word-spacing
+--- Grupos: CSS Text
+---@field word_spacing number|string|nil
+--- word-wrap
+--- Sintaxe: `normal | break-word`
+--- Valor inicial: `normal`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/overflow-wrap
+--- Grupos: CSS Text
+---@field word_wrap string|nil
+--- writing-mode
+--- Sintaxe: `horizontal-tb | vertical-rl | vertical-lr | sideways-rl | sideways-lr`
+--- Valor inicial: `horizontal-tb`
+--- Herdado: true
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/writing-mode
+--- Grupos: CSS Writing Modes
+---@field writing_mode string|nil
+--- x
+--- Sintaxe: `<length> | <percentage>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/x
+--- Grupos: Scalable Vector Graphics
+---@field x number|string|nil
+--- y
+--- Sintaxe: `<length> | <percentage>`
+--- Valor inicial: `0`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/y
+--- Grupos: Scalable Vector Graphics
+---@field y number|string|nil
+--- z-index
+--- Sintaxe: `auto | <integer>`
+--- Valor inicial: `auto`
+--- Herdado: false
+---@see https://developer.mozilla.org/docs/Web/CSS/Reference/Properties/z-index
+--- Grupos: CSS Positioned Layout
+---@field z_index string|nil
+---@return SVGElement
+local function new()
+    local self = setmetatable({}, { __index = SVGElement })
+    return self
+end
+
+---Define uma propriedade de estilo
+---@param name string  Nome CSS (ex.: 'fill', 'stroke-width')
+---@param value string|number
+---@return SVGElement
+function SVGElement:set(name, value)
+    local key = name:gsub('%-', '_')
+    self[key] = value
+    return self
+end
+
+---Serializa em string de atributo style
+---@return string
+function SVGElement:toStyleString()
+    local parts = {}
+    for k, v in pairs(self) do
+        if type(v) ~= 'function' and k ~= 'tag' and k ~= 'id' and k ~= 'class' then
+            local css = k:gsub('_', '-')
+            parts[#parts + 1] = css .. ':' .. tostring(v)
+        end
+    end
+    return table.concat(parts, '; ')
+end
+
+return { new = new, SVGElement = SVGElement }

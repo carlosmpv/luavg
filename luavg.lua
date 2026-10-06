@@ -1,8 +1,10 @@
+local SVG = {}
+
 ---Creates a new SVG Element
 ---@param name any
 ---@param childs SVGElement
 ---@return SVGElement
-function SVGElement(name, childs)
+function SVG.Element(name, childs)
     childs = childs or {}
     ---@class SVGElement : Element
     ---@field [number] SVGElement|string
@@ -32,7 +34,7 @@ function SVGElement(name, childs)
     return SVGElement
 end
 
-function SVG(content)
+function SVG.Document(content)
     local self     = {}
     content.xmlns  = content.xmlns or "http://www.w3.org/2000/svg"
     content.width  = content.width or 200
@@ -75,8 +77,8 @@ end
 ---Rectangle element
 ---@param params SVGRectElement
 ---@return SVGElement
-function Rect(params)
-    return SVGElement("rect", params)
+function SVG.Rect(params)
+    return SVG.Element("rect", params)
 end
 
 ---@class SVGCircleElement : SVGElement
@@ -87,8 +89,8 @@ end
 ---Circle element
 ---@param params SVGCircleElement
 ---@return SVGElement
-function Circle(params)
-    return SVGElement("circle", params)
+function SVG.Circle(params)
+    return SVG.Element("circle", params)
 end
 
 ---@class SVGEllipseElement : SVGElement
@@ -100,8 +102,8 @@ end
 ---Ellipse element
 ---@param params SVGEllipseElement
 ---@return SVGElement
-function Ellipse(params)
-    return SVGElement("ellipse", params)
+function SVG.Ellipse(params)
+    return SVG.Element("ellipse", params)
 end
 
 ---@class SVGLineElement : SVGElement
@@ -113,8 +115,8 @@ end
 ---Line element
 ---@param params SVGLineElement
 ---@return SVGElement
-function Line(params)
-    return SVGElement("line", params)
+function SVG.Line(params)
+    return SVG.Element("line", params)
 end
 
 ---@class SVGPoint
@@ -148,20 +150,20 @@ local function points_element(name, params)
         attributes.points = points_to_string(params.points)
         params = attributes
     end
-    return SVGElement(name, params)
+    return SVG.Element(name, params)
 end
 
 ---Polyline element
 ---@param params SVGPointsElement
 ---@return SVGElement
-function Polyline(params)
+function SVG.Polyline(params)
     return points_element("polyline", params)
 end
 
 ---Polygon element
 ---@param params SVGPointsElement
 ---@return SVGElement
-function Polygon(params)
+function SVG.Polygon(params)
     return points_element("polygon", params)
 end
 
@@ -172,8 +174,8 @@ end
 ---Path element
 ---@param params SVGPathElement
 ---@return SVGElement
-function Path(params)
-    return SVGElement("path", params)
+function SVG.Path(params)
+    return SVG.Element("path", params)
 end
 
 local function text_element(name, params, text)
@@ -186,14 +188,14 @@ local function text_element(name, params, text)
         children[#children + 1] = text
         params = children
     end
-    return SVGElement(name, params)
+    return SVG.Element(name, params)
 end
 
 ---Text element
 ---@param params SVGElement
 ---@param text string|nil
 ---@return SVGElement
-function Text(params, text)
+function SVG.Text(params, text)
     return text_element("text", params, text)
 end
 
@@ -201,112 +203,114 @@ end
 ---@param params SVGElement
 ---@param text string|nil
 ---@return SVGElement
-function TSpan(params, text)
+function SVG.TSpan(params, text)
     return text_element("tspan", params, text)
 end
 
 local function container_element(name, params)
-    return SVGElement(name, params)
+    return SVG.Element(name, params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Group(params)
+function SVG.Group(params)
     return container_element("g", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Defs(params)
+function SVG.Defs(params)
     return container_element("defs", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Symbol(params)
+function SVG.Symbol(params)
     return container_element("symbol", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Use(params)
+function SVG.Use(params)
     return container_element("use", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Image(params)
+function SVG.Image(params)
     return container_element("image", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function ForeignObject(params)
+function SVG.ForeignObject(params)
     return container_element("foreignObject", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Anchor(params)
+function SVG.Anchor(params)
     return container_element("a", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Title(params)
+function SVG.Title(params)
     return container_element("title", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Desc(params)
+function SVG.Desc(params)
     return container_element("desc", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Metadata(params)
+function SVG.Metadata(params)
     return container_element("metadata", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function LinearGradient(params)
+function SVG.LinearGradient(params)
     return container_element("linearGradient", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function RadialGradient(params)
+function SVG.RadialGradient(params)
     return container_element("radialGradient", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Stop(params)
+function SVG.Stop(params)
     return container_element("stop", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function ClipPath(params)
+function SVG.ClipPath(params)
     return container_element("clipPath", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Mask(params)
+function SVG.Mask(params)
     return container_element("mask", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Pattern(params)
+function SVG.Pattern(params)
     return container_element("pattern", params)
 end
 
 ---@param params SVGElement
 ---@return SVGElement
-function Marker(params)
+function SVG.Marker(params)
     return container_element("marker", params)
 end
+
+return SVG

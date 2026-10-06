@@ -17,14 +17,14 @@ LuaVG requires Lua 5.1 or newer.
 ## Quick Start
 
 ```lua
-require "luavg"
+local SVG = require "luavg"
 
-local drawing = SVG({
+local drawing = SVG.Document({
 	width = 240,
 	height = 140,
 	viewBox = "0 0 240 140",
 
-	Rect({
+	SVG.Rect({
 		x = 0,
 		y = 0,
 		width = 240,
@@ -32,14 +32,14 @@ local drawing = SVG({
 		fill = "#f4f1de",
 	}),
 
-	Circle({
+	SVG.Circle({
 		cx = 70,
 		cy = 70,
 		r = 38,
 		fill = "#e07a5f",
 	}),
 
-	Text({
+	SVG.Text({
 		x = 128,
 		y = 78,
 		fill = "#264653",
@@ -50,7 +50,7 @@ local drawing = SVG({
 drawing:save("drawing.svg")
 ```
 
-`require "luavg"` makes the library's constructors available as Lua globals. `SVG({...})` takes a table containing document attributes and child elements. Calling `:save(path)` writes the SVG document; `:toString()` returns its XML as a string.
+`require "luavg"` returns the `SVG` namespace, which contains the document and element constructors. `SVG.Document({...})` takes a table containing document attributes and child elements. Calling `:save(path)` writes the SVG document; `:toString()` returns its XML as a string.
 
 ## How It Works
 
@@ -58,16 +58,16 @@ drawing:save("drawing.svg")
 - Add child elements directly to the parent table, in the order they should appear.
 - Nest elements to build groups, text, definitions, gradients, clipping paths, and other SVG structures.
 - On regular SVG elements, attribute keys written in `snake_case` are emitted in SVG's `kebab-case`; for example, `stroke_width` becomes `stroke-width`.
-- `SVG` defaults to the standard SVG namespace and a `200` by `200` canvas when `xmlns`, `width`, or `height` are omitted.
+- `SVG.Document` defaults to the standard SVG namespace and a `200` by `200` canvas when `xmlns`, `width`, or `height` are omitted.
 
 ## Supported Elements
 
 ### Shapes and Paths
 
-`Rect`, `Circle`, `Ellipse`, `Line`, `Polyline`, `Polygon`, and `Path` create the corresponding SVG shapes. `Polyline` and `Polygon` accept `points` either as an SVG coordinate string or as a list of `{ x = ..., y = ... }` points:
+`SVG.Rect`, `SVG.Circle`, `SVG.Ellipse`, `SVG.Line`, `SVG.Polyline`, `SVG.Polygon`, and `SVG.Path` create the corresponding SVG shapes. `SVG.Polyline` and `SVG.Polygon` accept `points` either as an SVG coordinate string or as a list of `{ x = ..., y = ... }` points:
 
 ```lua
-Polygon({
+SVG.Polygon({
 	points = {
 		{ x = 20, y = 100 },
 		{ x = 80, y = 20 },
@@ -79,11 +79,11 @@ Polygon({
 
 ### Text and Composition
 
-`Text(params, text)` creates a text element with optional text content. Use `TSpan(params, text)` for styled or positioned spans inside text. `Group(params)` nests elements in a `<g>` element. `SVGElement(name, children)` provides a generic element constructor for SVG elements not covered by a named helper.
+`SVG.Text(params, text)` creates a text element with optional text content. Use `SVG.TSpan(params, text)` for styled or positioned spans inside text. `SVG.Group(params)` nests elements in a `<g>` element. `SVG.Element(name, children)` provides a generic element constructor for SVG elements not covered by a named helper.
 
 ### Definitions and Resources
 
-LuaVG also provides `Defs`, `Symbol`, `Use`, `Image`, `ForeignObject`, `Anchor`, `Title`, `Desc`, `Metadata`, `LinearGradient`, `RadialGradient`, `Stop`, `ClipPath`, `Mask`, `Pattern`, and `Marker`.
+LuaVG also provides `SVG.Defs`, `SVG.Symbol`, `SVG.Use`, `SVG.Image`, `SVG.ForeignObject`, `SVG.Anchor`, `SVG.Title`, `SVG.Desc`, `SVG.Metadata`, `SVG.LinearGradient`, `SVG.RadialGradient`, `SVG.Stop`, `SVG.ClipPath`, `SVG.Mask`, `SVG.Pattern`, and `SVG.Marker`.
 
 All constructors accept a table of attributes and, where applicable, nested child elements. `SVGElement:addChild(element)` appends a child and returns that element.
 

@@ -114,35 +114,38 @@ SVG.Document({
 
     dice_frame(),
 
-    SVG.Circle({
-        r = padding,
-        cx = width / 2,
-        cy = height / 2,
-    }),
+    {
 
-    SVG.Circle({
-        r = padding,
-        cx = dot_border_distance,
-        cy = dot_border_distance,
-    }),
+        SVG.Circle({
+            r = padding,
+            cx = width / 2,
+            cy = height / 2,
+        }),
 
-    SVG.Circle({
-        r = padding,
-        cx = width - dot_border_distance,
-        cy = dot_border_distance,
-    }),
+        SVG.Circle({
+            r = padding,
+            cx = dot_border_distance,
+            cy = dot_border_distance,
+        }),
 
-    SVG.Circle({
-        r = padding,
-        cx = width - dot_border_distance,
-        cy = height - dot_border_distance,
-    }),
+        SVG.Circle({
+            r = padding,
+            cx = width - dot_border_distance,
+            cy = dot_border_distance,
+        }),
 
-    SVG.Circle({
-        r = padding,
-        cx = dot_border_distance,
-        cy = height - dot_border_distance,
-    }),
+        SVG.Circle({
+            r = padding,
+            cx = width - dot_border_distance,
+            cy = height - dot_border_distance,
+        }),
+
+        SVG.Circle({
+            r = padding,
+            cx = dot_border_distance,
+            cy = height - dot_border_distance,
+        }),
+    }
 }):save("samples/dice/dice_5.svg")
 
 SVG.Document({

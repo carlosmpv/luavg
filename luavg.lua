@@ -1,5 +1,22 @@
 local SVG = {}
 
+local function serialize_child(value)
+    if type(value) == "string" then
+        return value
+    elseif type(value) == "table" then
+        if type(value.toString) == "function" then
+            return value:toString()
+        end
+
+        local children = {}
+        for _, child in ipairs(value) do
+            children[#children + 1] = serialize_child(child)
+        end
+        return table.concat(children)
+    end
+    return ""
+end
+
 ---Creates a new SVG Element
 ---@param name any
 ---@param childs SVGElement
@@ -20,13 +37,10 @@ function SVG.Element(name, childs)
         for key, value in pairs(childs) do
             if type(key) == "string" then
                 attrs = attrs .. (' %s="%s"'):format(key:gsub("%_", "-"), value)
-            elseif type(key) == "number" then
-                if type(value) == "string" then
-                    inner = inner .. value
-                elseif type(value) == "table" and value.toString then
-                    inner = inner .. value:toString()
-                end
             end
+        end
+        for _, child in ipairs(childs) do
+            inner = inner .. serialize_child(child)
         end
         return ('<%s%s>%s</%s>'):format(name, attrs, inner, name)
     end
@@ -45,13 +59,10 @@ function SVG.Document(content)
         for key, value in pairs(content) do
             if type(key) == "string" then
                 attrs = attrs .. (' %s="%s"'):format(key, value)
-            elseif type(key) == "number" then
-                if type(value) == "string" then
-                    childs = childs .. value
-                elseif type(value) == "table" and value.toString then
-                    childs = childs .. value:toString()
-                end
             end
+        end
+        for _, child in ipairs(content) do
+            childs = childs .. serialize_child(child)
         end
         return ('<?xml version="1.0" encoding="UTF-8"?><svg%s>%s</svg>'):format(attrs, childs)
     end
